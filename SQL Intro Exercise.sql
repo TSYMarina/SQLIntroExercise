@@ -13,7 +13,7 @@ Where Price = 1400;
 -- find all products that cost $11.99 or $13.99
  SELECT Name, Price, ProductID
 From Products 
-Where Price = 11.99 and 13.99;
+Where Price = 11.99 OR 13.99;
 
 -- find all products that do NOT cost 11.99 - using NOT
   SELECT Name, Price, ProductID 
@@ -31,7 +31,8 @@ Where Price = 11.99 and 13.99;
  Where MiddleInitial IS null;
  
 -- find distinct product prices
- SELECT DISTINCT Price From Products;
+ SELECT DISTINCT Price 
+ From Products;
  
 -- find all employees whose first name starts with the letter ‘j’
  SELECT FirstName, LastName
@@ -60,4 +61,5 @@ Where Title = "Geek Squad" and MiddleInitial IS null;
 -- find all products from the products table whose stock level is in the range  -- of 500 to 1200. Order by Price from least to greatest. **Use the between keyword** 
 Select *
 from products
-Where StockLevel BETWEEN 500 and 1200 Order By Price;
+Where StockLevel BETWEEN 500 and 1200 
+Order By Price;
